@@ -4,7 +4,7 @@ description: >-
   push/drop transitions and watch_it callOnce blocks in CLIENT-kind
   spans so you can see how widget lifecycle drives DI scope churn —
   often a hidden source of slow rebuilds.
-version: 0.1.0-beta.1-wip
+version: 0.1.0-beta.1
 repository: https://github.com/dartastic/otel_watch_it
 homepage: https://dartastic.io
 
