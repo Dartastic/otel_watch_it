@@ -19,7 +19,6 @@ Future<void> main() async {
   //    flowing when the first widget builds.
   await OTel.initialize(
     serviceName: 'watch-it-demo',
-    endpoint: 'http://localhost:4317',
   );
 
   // 2. Register your services with GetIt as usual.
