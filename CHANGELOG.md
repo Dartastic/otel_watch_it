@@ -1,6 +1,11 @@
 # Changelog
 
-## [0.1.0-beta.2-wip]
+## [0.2.0-wip]
+
+### Changed
+
+- Raised dependency floors: `get_it` `^9.2.0`, `watch_it` `^2.4.0`
+  (drops the discontinued transitive `functional_listener`).
 
 ## [0.1.0-beta.1] - 2026-05-16
 

@@ -1,10 +1,9 @@
 name: otel_watch_it
 description: >-
   OpenTelemetry instrumentation for package:watch_it. Wraps GetIt scope
-  push/drop transitions and watch_it callOnce blocks in CLIENT-kind
-  spans so you can see how widget lifecycle drives DI scope churn —
-  often a hidden source of slow rebuilds.
-version: 0.1.0-beta.2-wip
+  push/drop transitions and callOnce blocks in CLIENT-kind spans to expose
+  DI scope churn.
+version: 0.2.0-wip
 repository: https://github.com/dartastic/otel_watch_it
 homepage: https://dartastic.io
 
@@ -13,12 +12,12 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  dartastic_opentelemetry: ^1.1.0-beta.5
-  dartastic_opentelemetry_api: ^1.0.0-beta.6
+  dartastic_opentelemetry: ^1.1.0-beta.12
+  dartastic_opentelemetry_api: ^1.0.0-rc.1
   flutter:
     sdk: flutter
-  get_it: ^7.6.0
-  watch_it: ^1.4.0
+  get_it: ^9.2.0
+  watch_it: ^2.4.0
 
 dev_dependencies:
   dart_flutter_team_lints: ^3.5.2

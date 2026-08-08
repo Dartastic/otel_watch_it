@@ -87,7 +87,7 @@ void callOnceTraced(
         span.addAttributes(
           OTel.attributes([
             OTel.attributeString(
-              ErrorResource.errorType.key,
+              ErrorAttributes.errorType.key,
               e.runtimeType.toString(),
             ),
           ]),
@@ -142,7 +142,7 @@ void pushScopeTraced(
               span.addAttributes(
                 OTel.attributes([
                   OTel.attributeString(
-                    ErrorResource.errorType.key,
+                    ErrorAttributes.errorType.key,
                     e.runtimeType.toString(),
                   ),
                 ]),
@@ -194,7 +194,7 @@ void _spanDispose(
     span.addAttributes(
       OTel.attributes([
         OTel.attributeString(
-          ErrorResource.errorType.key,
+          ErrorAttributes.errorType.key,
           e.runtimeType.toString(),
         ),
       ]),
