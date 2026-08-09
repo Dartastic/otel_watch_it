@@ -3,7 +3,7 @@ description: >-
   OpenTelemetry instrumentation for package:watch_it. Wraps GetIt scope
   push/drop transitions and callOnce blocks in CLIENT-kind spans to expose
   DI scope churn.
-version: 0.2.0
+version: 0.3.0-wip
 repository: https://github.com/dartastic/otel_watch_it
 homepage: https://dartastic.io
 
