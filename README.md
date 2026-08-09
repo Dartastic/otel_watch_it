@@ -19,7 +19,7 @@ first questions you ask when a screen feels slow.
 ```yaml
 dependencies:
   watch_it: ^2.4.0
-  otel_watch_it: ^0.1.0-beta.1
+  otel_watch_it: ^0.2.0
 ```
 
 ## Use
