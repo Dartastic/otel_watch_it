@@ -1,7 +1,7 @@
 // Licensed under the Apache License, Version 2.0
 // Copyright 2025, Mindful Software LLC, All rights reserved.
 
-import 'package:dartastic_opentelemetry/dartastic_opentelemetry.dart';
+import 'package:dartastic_opentelemetry_api/dartastic_opentelemetry_api.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:watch_it/watch_it.dart' as wi;
@@ -11,7 +11,7 @@ import 'otel_watch_it_suppression.dart';
 const _tracerName = 'otel_watch_it';
 const _diSystem = 'get_it';
 
-Tracer _tracer() => OTel.tracerProvider().getTracer(_tracerName);
+APITracer _tracer() => OTelAPI.tracerProvider().getTracer(_tracerName);
 
 /// Typed attribute keys for watch_it lifecycle spans.
 ///
@@ -75,7 +75,7 @@ void callOnceTraced(
       final span = _tracer().startSpan(
         'watch_it callOnce $name',
         kind: SpanKind.client,
-        attributes: OTel.attributesFromMap(<String, Object>{
+        attributes: OTelAPI.attributesFromMap(<String, Object>{
           WatchItSemantics.widgetLifecycle.key: 'call_once',
           WatchItSemantics.widgetName.key: name,
           WatchItSemantics.diSystem.key: _diSystem,
@@ -85,8 +85,8 @@ void callOnceTraced(
         init(ctx);
       } catch (e, st) {
         span.addAttributes(
-          OTel.attributes([
-            OTel.attributeString(
+          OTelAPI.attributes([
+            OTelAPI.attributeString(
               ErrorAttributes.errorType.key,
               e.runtimeType.toString(),
             ),
@@ -129,7 +129,7 @@ void pushScopeTraced(
             final span = _tracer().startSpan(
               'watch_it pushScope $name',
               kind: SpanKind.client,
-              attributes: OTel.attributesFromMap(<String, Object>{
+              attributes: OTelAPI.attributesFromMap(<String, Object>{
                 WatchItSemantics.widgetLifecycle.key: 'push_scope',
                 WatchItSemantics.widgetName.key: name,
                 WatchItSemantics.diSystem.key: _diSystem,
@@ -140,8 +140,8 @@ void pushScopeTraced(
               init(getIt);
             } catch (e, st) {
               span.addAttributes(
-                OTel.attributes([
-                  OTel.attributeString(
+                OTelAPI.attributes([
+                  OTelAPI.attributeString(
                     ErrorAttributes.errorType.key,
                     e.runtimeType.toString(),
                   ),
@@ -182,7 +182,7 @@ void _spanDispose(
   final span = _tracer().startSpan(
     'watch_it $lifecycle $name',
     kind: SpanKind.client,
-    attributes: OTel.attributesFromMap(<String, Object>{
+    attributes: OTelAPI.attributesFromMap(<String, Object>{
       WatchItSemantics.widgetLifecycle.key: lifecycle,
       WatchItSemantics.widgetName.key: name,
       WatchItSemantics.diSystem.key: _diSystem,
@@ -192,8 +192,8 @@ void _spanDispose(
     body();
   } catch (e, st) {
     span.addAttributes(
-      OTel.attributes([
-        OTel.attributeString(
+      OTelAPI.attributes([
+        OTelAPI.attributeString(
           ErrorAttributes.errorType.key,
           e.runtimeType.toString(),
         ),
